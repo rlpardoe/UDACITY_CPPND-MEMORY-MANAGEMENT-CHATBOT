@@ -20,7 +20,8 @@ private:
     // data handles (owned)
     //std::vector<GraphNode *> _nodes;
     std::vector<std::unique_ptr<GraphNode>> _nodes;
-    std::vector<GraphEdge *> _edges;
+    //std::vector<GraphEdge *> _edges; no need for a vecor, all will be managed by individual nodes
+    
 
     ////
     //// EOF STUDENT CODE
