@@ -49,6 +49,8 @@ ChatBot::ChatBot(ChatBot& source){
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
     _image = new wxBitmap(*source._image); //deep copy needed for image as the memory is managed by ChatBot and otherwise double delete likely
+
+    _chatLogic->SetChatbotHandle(this);
 }
 
 ChatBot& ChatBot::operator=(ChatBot& source){
@@ -56,6 +58,9 @@ ChatBot& ChatBot::operator=(ChatBot& source){
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
     _image = new wxBitmap(*source._image); //deep copy needed for image as the memory is managed by ChatBot and otherwise double delete likely
+
+    _chatLogic->SetChatbotHandle(this);
+
     return *this;
 }
 
@@ -67,6 +72,8 @@ ChatBot::ChatBot(ChatBot&& source){
     source._image = NULL;
     source._rootNode = nullptr;
     source._chatLogic = nullptr;
+
+    _chatLogic->SetChatbotHandle(this);
 }
 
 ChatBot& ChatBot::operator=(ChatBot&& source){
@@ -77,6 +84,9 @@ ChatBot& ChatBot::operator=(ChatBot&& source){
     source._image = NULL;
     source._rootNode = nullptr;
     source._chatLogic = nullptr;
+
+    _chatLogic->SetChatbotHandle(this);
+
     return *this;
 }
 
