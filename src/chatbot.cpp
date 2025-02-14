@@ -48,7 +48,7 @@ ChatBot::ChatBot(ChatBot& source){
     std::cout << "ChatBot Copy Constructor" << std::endl;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
-    _image = new wxBitmap(*source._image); //deep copy needed for image as the memory is managed by ChatBot and otherwise double delete likely
+    _image = new wxBitmap(*source._image); //deep copy needed for image as the memory is managed by ChatBot and otherwise double delete
 
     _chatLogic->SetChatbotHandle(this);
 }
@@ -57,7 +57,7 @@ ChatBot& ChatBot::operator=(ChatBot& source){
     std::cout << "ChatBot Copy Assignment" << std::endl;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
-    _image = new wxBitmap(*source._image); //deep copy needed for image as the memory is managed by ChatBot and otherwise double delete likely
+    _image = new wxBitmap(*source._image); //deep copy needed for image as the memory is managed by ChatBot and otherwise double delete
 
     _chatLogic->SetChatbotHandle(this);
 

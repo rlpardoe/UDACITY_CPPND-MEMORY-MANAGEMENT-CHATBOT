@@ -134,9 +134,7 @@ ChatBotPanelDialog::~ChatBotPanelDialog()
 {
     //// STUDENT CODE
     ////
-
-    //delete _chatLogic;
-
+    // no destructor needed now that chatLogic instance is managed by uniqueptr
     ////
     //// EOF STUDENT CODE
 }
